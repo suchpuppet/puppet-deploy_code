@@ -2,6 +2,7 @@
 
 # Puppet Task Name: deploy_code
 set -e
+export PATH="/opt/puppetlabs/puppet/bin:/opt/puppetlabs/bin:/opt/puppetlabs/bolt/bin:$PATH"
 
 # Validate and set environment
 if [[ -z "$PT_environment" ]]; then
