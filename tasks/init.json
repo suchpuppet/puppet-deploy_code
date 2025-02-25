@@ -1,0 +1,25 @@
+{
+  "puppet_task_version": 1,
+  "supports_noop": false,
+  "description": "Task to use r10k to deploy code to a Puppet environment",
+  "parameters": {
+    "environment": {
+      "description": "The environment to deploy to",
+      "type": "Optional[String]"
+    },
+    "r10k_path": {
+      "description": "The path to the r10k executable",
+      "type": "Optional[String]",
+      "default": "/opt/puppetlabs/puppet/bin/r10k"
+    },
+    "expire_cache": {
+      "description": "Whether to clear the environment cache after deployment",
+      "type": "Optional[Boolean]",
+      "default": true
+    },
+    "ssl_dir": {
+      "description": "The path to the SSL directory",
+      "type": "Optional[String]"
+    }
+  }
+}
