@@ -53,7 +53,7 @@ PUPPETSERVER=$(puppet config print --section main server)
 
 if [[ $PT_expire_cache ]]; then
   echo "Flushing ${PT_environment} environment cache"
-  curl -f -s --cert $(puppet config print --section main hostcert) --key $(puppet config print --section main hostprivkey)  --cacert "${SSL_DIR}/certs/ca.pem" -X DELETE https://${PUPPETSERVER}:8140/puppet-admin-api/v1/environment-cache${query_params}
+  curl -f --cert $(puppet config print --section main hostcert) --key $(puppet config print --section main hostprivkey)  --cacert "${SSL_DIR}/certs/ca.pem" -X DELETE https://${PUPPETSERVER}:8140/puppet-admin-api/v1/environment-cache${query_params}
 
   if [[ $? -eq 0 ]]; then
     echo "Flushed ${PT_environment} environment cache"
